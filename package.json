@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc --watch src/index.ts"
+    "dev": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,8 @@
     "pg": "^8.11.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.16"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
   }
 }
