@@ -6,6 +6,7 @@ services:
     build: .
     volumes:
       - .:/app
+      - ./node_modules:/app/node_modules/
     networks:
       - typeorm_migrations_network
   database:
