@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { dataSource } from "../config/Datasource";
 
-@Entity()
+@Entity({ schema: "public", name: "cats" })
 export class CatEntity {
   @PrimaryGeneratedColumn()
   id: number;
