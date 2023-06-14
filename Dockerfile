@@ -2,10 +2,12 @@ FROM node:20-alpine3.17
 
 WORKDIR /app
 
+RUN yarn global add pnpm
+
 COPY package.json .
 
-RUN yarn
+RUN pnpm install
 
 COPY . .
 
-CMD ["yarn", "dev"]
+CMD ["pnpm", "dev"]
