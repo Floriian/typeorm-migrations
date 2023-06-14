@@ -2,11 +2,15 @@ import { NextFunction, Request, Response } from "express";
 import { BaseException } from "../exceptions/BaseException";
 
 export function errorMiddleware(
-  error: BaseException,
+  error: Error,
   req: Request,
   res: Response,
   next: NextFunction
 ) {
-  const { code, body } = error;
-  res.status(code).json({ code, body });
+  if (error instanceof BaseException) {
+    const { code, body } = error;
+    res.status(error.code).json({ code, body });
+  } else {
+    res.status(500).json({ body: "Internal Server Error." });
+  }
 }
