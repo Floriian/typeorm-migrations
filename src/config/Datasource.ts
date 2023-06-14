@@ -11,7 +11,6 @@ const dataSourceOptions: DataSourceOptions = {
   database: "typeorm_migrations",
   entities: [CatEntity],
   migrations: [join(__dirname, "../../src/migrations/*.{ts}")],
-  synchronize: true,
 };
 export default dataSourceOptions;
 export const dataSource = new DataSource(dataSourceOptions);
