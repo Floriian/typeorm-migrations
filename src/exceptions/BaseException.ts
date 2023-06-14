@@ -1,5 +1,3 @@
-import { Response } from "express";
-
 export class BaseException extends Error {
   body: string;
   code: number;
