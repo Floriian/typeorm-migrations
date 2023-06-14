@@ -10,7 +10,7 @@ const dataSourceOptions: DataSourceOptions = {
   password: "password",
   database: "typeorm_migrations",
   entities: [CatEntity],
-  migrations: [join(__dirname, "../../src/migrations/*.{ts}")],
+  migrations: ["dist/migrations/*.js"],
 };
 export default dataSourceOptions;
 export const dataSource = new DataSource(dataSourceOptions);
