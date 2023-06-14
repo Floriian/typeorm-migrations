@@ -8,4 +8,7 @@ export class CatEntity {
 
   @Column()
   catName: string;
+
+  @Column()
+  specie: string;
 }
