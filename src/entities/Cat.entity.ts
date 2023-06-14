@@ -11,4 +11,7 @@ export class CatEntity {
 
   @Column()
   specie: string;
+
+  @Column()
+  age: number;
 }
