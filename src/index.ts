@@ -6,10 +6,8 @@ import express, {
 } from "express";
 import cors from "cors";
 import { dataSource } from "./config/Datasource";
-import { CatEntity } from "./entities/Cat.entity";
-import { NotFoundException } from "./exceptions/NotFoundException";
 import { errorMiddleware } from "./middlewares/error.middleware";
-import { BaseException } from "./exceptions/BaseException";
+import { catRouter } from "./routes/cat.router";
 
 const app: Express = express();
 
@@ -21,15 +19,7 @@ dataSource
     throw new Error(e);
   });
 
-app.get("/", async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const cats = await dataSource.getRepository(CatEntity).find();
-    if (!cats.length) throw new NotFoundException();
-    res.status(200).json({ cats });
-  } catch (e) {
-    next(e);
-  }
-});
+app.use("/cats", catRouter);
 
 app.use(cors());
 app.use(errorMiddleware);
