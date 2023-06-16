@@ -5,7 +5,7 @@ import { faker } from "@faker-js/faker";
 function main() {
   dataSource
     .initialize()
-    .then(async (db) => {
+    .then(async () => {
       const catRepository = dataSource.getRepository(CatEntity);
       for (let i = 0; i <= 10; i++) {
         const cat = new CatEntity();
