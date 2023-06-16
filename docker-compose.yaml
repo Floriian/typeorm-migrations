@@ -11,6 +11,8 @@ services:
       - typeorm_migrations_network
     ports:
       - 3000:3000
+    depends_on:
+      - database
   database:
     image: postgres:15.3-alpine3.18
     ports:
