@@ -1,4 +1,3 @@
-import { join } from "path";
 import { DataSource, type DataSourceOptions } from "typeorm";
 import { CatEntity } from "../entities/Cat.entity";
 

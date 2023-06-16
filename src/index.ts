@@ -1,9 +1,4 @@
-import express, {
-  Request,
-  type Express,
-  Response,
-  NextFunction,
-} from "express";
+import express, { type Express } from "express";
 import cors from "cors";
 import { dataSource } from "./config/Datasource";
 import { errorMiddleware } from "./middlewares/error.middleware";

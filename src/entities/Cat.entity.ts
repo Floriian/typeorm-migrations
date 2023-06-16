@@ -1,5 +1,4 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { dataSource } from "../config/Datasource";
 
 @Entity({ schema: "public", name: "cats" })
 export class CatEntity {
@@ -16,5 +15,5 @@ export class CatEntity {
   age: number;
 
   @Column()
-  sex: "FEMALE" | "MALE"
+  sex: "FEMALE" | "MALE";
 }
