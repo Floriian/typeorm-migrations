@@ -14,4 +14,7 @@ export class CatEntity {
 
   @Column()
   age: number;
+
+  @Column()
+  sex: "FEMALE" | "MALE"
 }
