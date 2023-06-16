@@ -9,7 +9,7 @@ export function errorMiddleware(
 ) {
   if (error instanceof BaseException) {
     const { code, body } = error;
-    res.status(error.code).json({ code, body });
+    res.status(code).json({ code, body });
   } else {
     res.status(500).json({ body: "Internal Server Error." });
   }
